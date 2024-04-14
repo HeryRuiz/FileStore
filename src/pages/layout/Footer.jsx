@@ -6,7 +6,11 @@ function Footer() {
       <footer className="footer">
         <div className="footer__container">
           <p className="footer__name">Filestore</p>
-          <div></div>
+          <div className="footer__div">
+            <p>Privacy</p>
+            <p>Terms of Service</p>
+            <p>About</p>
+          </div>
         </div>
       </footer>
     </>

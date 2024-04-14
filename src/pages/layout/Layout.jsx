@@ -5,7 +5,7 @@ import Footer from "./Footer.jsx";
 function Layout() {
   return (
     <>
-      <Nav />
+      <Nav/>
       <Outlet />
       <Footer />
     </>

@@ -5,8 +5,11 @@ import {
   Route,
   useLocation,
 } from "react-router-dom";
+
 import Layout from "./pages/layout/Layout";
 import Home from "./pages/home/Home";
+import Login from "./pages/auth/Login";
+
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -18,6 +21,7 @@ const ScrollToTop = () => {
 };
 
 function App() {
+
   return (
     <>
       <>
@@ -26,6 +30,7 @@ function App() {
           <Routes>
             <Route element={<Layout />}>
             <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
             </Route>
           </Routes>
         </Router>

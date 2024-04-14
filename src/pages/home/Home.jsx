@@ -1,6 +1,7 @@
 import React from "react";
 import "./styles/Home.css";
 import logo from "./images/logo.png";
+import { Link } from "react-router-dom";
 function Home() {
   function setArrowStyle() {
     document.querySelector(`.hero__arrow`).style.left = "3px";
@@ -25,7 +26,7 @@ function Home() {
             minute.
           </p>
           <div className="hero__div">
-            <button className="hero__started">Get Started</button>
+            <Link to='/login' className="hero__started">Get Started</Link>
             <button
               className="hero__learn"
               onMouseOver={()=> setArrowStyle()}

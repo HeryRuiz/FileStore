@@ -3,6 +3,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 70vh;
+  padding: 2rem 0rem 2rem 0rem;
 }
 .hero__content img {
   width: 12.5rem;

@@ -12,7 +12,7 @@ function Home() {
   return (
     <>
       <section id="hero">
-        <div class="hero__content">
+        <div className="hero__content">
           <img src={logo} alt="FileStore Logo" />
           <p className="hero__heading">
             The easiest way to <br />

@@ -1,0 +1,10 @@
+.footer{
+    background-color: #F9FAFB ;
+    height: 7rem ; 
+    width: 100%; 
+    border-top: 1px solid #E2E8F0;
+}
+.footer__name{
+    font-weight: 600;
+    font-size: 1.2rem;
+}

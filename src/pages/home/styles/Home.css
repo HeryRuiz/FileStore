@@ -5,6 +5,27 @@
   align-items: center;
   height: 70vh;
   padding: 2rem 0rem 2rem 0rem;
+  background: radial-gradient(
+    55.87%55.87%at 35.49%-18.37%,
+    #d1aad7 0%,
+    rgba(255, 255, 255, 0) 100%
+  ),
+  radial-gradient(
+    70.81%48.44%at -24.53%-16.02%,
+    #c88bc4 0%,
+    rgba(255, 255, 255, 0) 100%
+  ),
+  radial-gradient(
+    91.61%92.58%at 104.86%-43.36%,
+    #7b8fdd 0%,
+    rgba(255, 255, 255, 0) 100%
+  ),
+  radial-gradient(
+    50.59%55.55%at -2.99%-8.69%,
+    #86bff2 9.06%,
+    rgba(255, 255, 255, 0) 100%
+  ),
+  #f7fafc;
 }
 .hero__content img {
   width: 12.5rem;

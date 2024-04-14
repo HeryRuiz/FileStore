@@ -3,7 +3,8 @@ import logo from "./images/logo.png";
 import "./styles/Nav.css";
 function Nav() {
   return (
-    <nav>
+    <header>
+      <nav>
         <div className="nav__container">
           <div className="nav__left">
             <img src={logo} alt="FileStore Logo" />
@@ -13,7 +14,8 @@ function Nav() {
             <button className="nav__signin">Sign In</button>
           </div>
         </div>
-    </nav>
+      </nav>
+    </header>
   );
 }
 

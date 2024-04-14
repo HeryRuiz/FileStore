@@ -6,6 +6,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import Layout from "./pages/layout/Layout";
+import Home from "./pages/home/Home";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -24,7 +25,7 @@ function App() {
           <ScrollToTop />
           <Routes>
             <Route element={<Layout />}>
-            <Route path="/" element={'adwawd'} />
+            <Route path="/" element={<Home />} />
             </Route>
           </Routes>
         </Router>

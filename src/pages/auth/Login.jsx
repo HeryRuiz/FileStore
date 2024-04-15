@@ -18,19 +18,21 @@ function Login() {
               type="email"
               placeholder="Email address"
               className="form__input"
+              required
             />
             <input
               type="password"
               placeholder="Password"
               className="form__input"
+              required
+              minLength={6}
             />
           </div>
           <button className="form__button">Log In</button>
           <div className="form__flex">
             <p className="form__other">
-              Don’t have an account? <Link to="signup">Sign up</Link>
+            Don’t have an account? <Link to="/Signup">Sign Up</Link>
             </p>
-            <p className="form__forgot">Forgot password?</p>
           </div>
         </form>
       </div>

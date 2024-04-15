@@ -102,3 +102,9 @@ input:focus {
   margin-bottom: 0.5rem;
   opacity: 0;
 }
+.form__good{
+  color: green;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  opacity: 0;
+}

@@ -42,9 +42,8 @@ function Signup() {
           <button className="form__button">Sign up</button>
           <div className="form__flex">
             <p className="form__other">
-            Already have an account? <Link to="/login">Log In</Link>
+              Already have an account? <Link to="/login">Log In</Link>
             </p>
-            <p className="form__forgot">Forgot password?</p>
           </div>
         </form>
       </div>

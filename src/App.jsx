@@ -7,10 +7,10 @@ import {
 } from "react-router-dom";
 
 import Layout from "./pages/layout/Layout";
-import Home from "./pages/home/Home";
+import Hero from "./pages/hero/Hero";
 import Login from "./pages/auth/Login";
 import Signup from "./pages/auth/Signup";
-
+import Password from "./pages/auth/Password";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -22,7 +22,6 @@ const ScrollToTop = () => {
 };
 
 function App() {
-
   return (
     <>
       <>
@@ -30,9 +29,12 @@ function App() {
           <ScrollToTop />
           <Routes>
             <Route element={<Layout />}>
-            <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
+              <Route path="/" element={<Hero />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/reset" element={<Password />} />
+              {"private route"}
+              <Route path="/home" element={<Password />} />
             </Route>
           </Routes>
         </Router>

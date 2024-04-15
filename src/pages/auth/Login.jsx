@@ -31,8 +31,9 @@ function Login() {
           <button className="form__button">Log In</button>
           <div className="form__flex">
             <p className="form__other">
-            Don’t have an account? <Link to="/Signup">Sign Up</Link>
+              Don’t have an account? <Link to="/Signup">Sign Up</Link>
             </p>
+            <Link to='/reset' className="form__forgot">Forgot password?</Link>
           </div>
         </form>
       </div>

@@ -10,7 +10,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: 80rem;
+    max-width: 90rem;
 }
 .nav__left{
     display: flex;

@@ -51,7 +51,7 @@ function Home() {
         <div className="home__right">
           <div className="home__top">
             <p className="home__title">
-              {selected === "all" ? "All Files" : "Deleted Files"}
+              {selected === "all" ? "All Files" : "Trash"}
             </p>
             <button className="home__upload">Upload File</button>
           </div>

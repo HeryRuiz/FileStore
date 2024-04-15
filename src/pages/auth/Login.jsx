@@ -12,6 +12,7 @@ function Login() {
           </p>
         </div>
         <form action="">
+          <p className="form__error">Invalid account information</p>
           <div className="form__div">
             <input
               type="email"

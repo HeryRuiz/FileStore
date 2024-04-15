@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import Trash2 from "./Trash";
-import All from "./All";
 import {
   File,
   Trash,
@@ -10,9 +8,12 @@ import {
   EllipsisVertical,
 } from "lucide-react";
 import "./styles/Home.css";
-import filler from './images/filler.png'
+import filler from "./images/filler.png";
+import empty from "./images/empty.png";
+import Fake from "./Fake";
 function Home() {
   const [selected, setSelected] = useState("all");
+  const [isempty, setEmpty] = useState(false);
   return (
     <section id="home">
       <div className="home__container">
@@ -66,92 +67,23 @@ function Home() {
             </div>
           </div>
           <div className="home__grid">
-            <div className="grid__item">
-              <div className="item__top">
-                <div className="item__name">
-                  <FileCheck />
-                  <p>Filename</p>
-                </div>
-                <EllipsisVertical className="file__option" />
-              </div>
-              <img className="item__image" src={filler} alt="image"/>
-              <div className="item__position__flex">
-                <div className="item__avatar">H</div>
-                <p>Name</p>
-              </div>
-            </div>
-
-            <div className="grid__item">
-              <div className="item__top">
-                <div className="item__name">
-                  <FileCheck />
-                  <p>Filename</p>
-                </div>
-                <EllipsisVertical className="file__option" />
-              </div>
-              <img className="item__image" src={filler} alt="image"/>
-              <div className="item__position__flex">
-                <div className="item__avatar">H</div>
-                <p>Name</p>
-              </div>
-            </div>
-            <div className="grid__item">
-              <div className="item__top">
-                <div className="item__name">
-                  <FileCheck />
-                  <p>Filename</p>
-                </div>
-                <EllipsisVertical className="file__option" />
-              </div>
-              <img className="item__image" src={filler} alt="image"/>
-              <div className="item__position__flex">
-                <div className="item__avatar">H</div>
-                <p>Name</p>
-              </div>
-            </div>
-            <div className="grid__item">
-              <div className="item__top">
-                <div className="item__name">
-                  <FileCheck />
-                  <p>Filename</p>
-                </div>
-                <EllipsisVertical className="file__option" />
-              </div>
-              <img className="item__image" src={filler} alt="image"/>
-              <div className="item__position__flex">
-                <div className="item__avatar">H</div>
-                <p>Name</p>
-              </div>
-            </div>
-            <div className="grid__item">
-              <div className="item__top">
-                <div className="item__name">
-                  <FileCheck />
-                  <p>Filename</p>
-                </div>
-                <EllipsisVertical className="file__option" />
-              </div>
-              <img className="item__image" src={filler} alt="image"/>
-              <div className="item__position__flex">
-                <div className="item__avatar">H</div>
-                <p>Name</p>
-              </div>
-            </div>
-            <div className="grid__item">
-              <div className="item__top">
-                <div className="item__name">
-                  <FileCheck />
-                  <p>Filename</p>
-                </div>
-                <EllipsisVertical className="file__option" />
-              </div>
-              <img className="item__image" src={filler} alt="image"/>
-              <div className="item__position__flex">
-                <div className="item__avatar">H</div>
-                <p>Name</p>
-              </div>
-            </div>
+              <Fake />
+              <Fake />
+              <Fake />
+              <Fake />
+              <Fake />
+              <Fake />
+              <Fake />
+              <Fake />
           </div>
+          {isempty ? (
+            <>
+              <img src={empty} alt="No Files" className="home__empty" />
+              <p></p>
+            </>
+          ) : (
+            <></>
+          )}
         </div>
       </div>
     </section>

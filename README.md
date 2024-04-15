@@ -6,7 +6,7 @@
 
 </p>
 
-👉 Live Demo: <a href=''>File Store Demo</a>
+👉 Live Demo: <a href='https://filestored.vercel.app'>Filestore Demo</a>
 
 <h3>Built using:</h3>
 » React <br>
@@ -22,17 +22,22 @@
 <h3 align='center'>Home Page 🏠</h3>
 
 <div align='center'>
-  <img src=''/>
+  <img src='./readme/home.png'/>
 </div>
 <br><br>
 
 <h3 align='center'>Files 📁</h3>
 <div align='center'>
-  <img src=''/>
+  <img src='./readme/files.png'/>
 </div>
 <br><br>
-<h3 align='center'>Trash 🗑️</h3>
+<h3 align='center'>Log in 🙇</h3>
 <div align='center'>
-  <img src=''/>
+  <img src='./readme/login.png'/>
 </div>
+
 <br><br>
+<h3 align='center'>Sign up 🕳️</h3>
+<div align='center'>
+  <img src='./readme/signup.png'/>
+</div>

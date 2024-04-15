@@ -161,19 +161,11 @@
   gap: 0.5rem;
   align-items: center;
 }
-.item__avatar {
-  background-color: #202c49;
-  color: white;
-  padding: 0.3rem;
-  font-size: 0.9rem;
-  width: 20px;
-  height: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 100%;
+.item__position__flex img {
+  width: 40px;
 }
-.home__empty{
-    width: 100%;
-    max-width: 35rem;
+
+.home__empty {
+  width: 100%;
+  max-width: 35rem;
 }

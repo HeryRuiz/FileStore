@@ -8,6 +8,7 @@ import {
   EllipsisVertical,
 } from "lucide-react";
 import filler from "./images/filler.png";
+import avatar from "./images/avatar.png";
 function Fake() {
   return (
     <>
@@ -21,7 +22,7 @@ function Fake() {
         </div>
         <img className="item__image" src={filler} alt="image" />
         <div className="item__position__flex">
-          <div className="item__avatar">H</div>
+          <img src={avatar} alt="avatar" />
           <p>You</p>
         </div>
       </div>

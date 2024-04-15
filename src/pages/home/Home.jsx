@@ -1,8 +1,16 @@
 import React, { useState } from "react";
 import Trash2 from "./Trash";
 import All from "./All";
-import { File, Trash, Grid3X3, Rows2 } from "lucide-react";
+import {
+  File,
+  Trash,
+  Grid3X3,
+  Rows2,
+  FileCheck,
+  EllipsisVertical,
+} from "lucide-react";
 import "./styles/Home.css";
+import filler from './images/filler.png'
 function Home() {
   const [selected, setSelected] = useState("all");
   return (
@@ -53,8 +61,95 @@ function Home() {
               <p>Grid</p>
             </div>
             <div className="layout__option2">
-            <Rows2 />
+              <Rows2 />
               <p>Table</p>
+            </div>
+          </div>
+          <div className="home__grid">
+            <div className="grid__item">
+              <div className="item__top">
+                <div className="item__name">
+                  <FileCheck />
+                  <p>Filename</p>
+                </div>
+                <EllipsisVertical className="file__option" />
+              </div>
+              <img className="item__image" src={filler} alt="image"/>
+              <div className="item__position__flex">
+                <div className="item__avatar">H</div>
+                <p>Name</p>
+              </div>
+            </div>
+
+            <div className="grid__item">
+              <div className="item__top">
+                <div className="item__name">
+                  <FileCheck />
+                  <p>Filename</p>
+                </div>
+                <EllipsisVertical className="file__option" />
+              </div>
+              <img className="item__image" src={filler} alt="image"/>
+              <div className="item__position__flex">
+                <div className="item__avatar">H</div>
+                <p>Name</p>
+              </div>
+            </div>
+            <div className="grid__item">
+              <div className="item__top">
+                <div className="item__name">
+                  <FileCheck />
+                  <p>Filename</p>
+                </div>
+                <EllipsisVertical className="file__option" />
+              </div>
+              <img className="item__image" src={filler} alt="image"/>
+              <div className="item__position__flex">
+                <div className="item__avatar">H</div>
+                <p>Name</p>
+              </div>
+            </div>
+            <div className="grid__item">
+              <div className="item__top">
+                <div className="item__name">
+                  <FileCheck />
+                  <p>Filename</p>
+                </div>
+                <EllipsisVertical className="file__option" />
+              </div>
+              <img className="item__image" src={filler} alt="image"/>
+              <div className="item__position__flex">
+                <div className="item__avatar">H</div>
+                <p>Name</p>
+              </div>
+            </div>
+            <div className="grid__item">
+              <div className="item__top">
+                <div className="item__name">
+                  <FileCheck />
+                  <p>Filename</p>
+                </div>
+                <EllipsisVertical className="file__option" />
+              </div>
+              <img className="item__image" src={filler} alt="image"/>
+              <div className="item__position__flex">
+                <div className="item__avatar">H</div>
+                <p>Name</p>
+              </div>
+            </div>
+            <div className="grid__item">
+              <div className="item__top">
+                <div className="item__name">
+                  <FileCheck />
+                  <p>Filename</p>
+                </div>
+                <EllipsisVertical className="file__option" />
+              </div>
+              <img className="item__image" src={filler} alt="image"/>
+              <div className="item__position__flex">
+                <div className="item__avatar">H</div>
+                <p>Name</p>
+              </div>
             </div>
           </div>
         </div>

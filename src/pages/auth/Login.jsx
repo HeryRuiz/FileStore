@@ -1,11 +1,18 @@
 import React, { useState } from "react";
 import "./styles/Login.css";
 import { Link } from "react-router-dom";
+import {
+  sendPasswordResetEmail,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { auth } from "../firebase/firebase";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -15,8 +22,18 @@ function Login() {
     setPassword(e.target.value);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      setEmail("");
+      setPassword("");
+      setError(null);
+      navigate("/home");
+    } catch {
+      setError("Invalid email or password");
+      document.querySelector(".form__error").style.opacity = "1";
+    }
   };
 
   return (
@@ -29,7 +46,7 @@ function Login() {
           </p>
         </div>
         <form onSubmit={handleSubmit}>
-          {error && <p className="form__error">{error}</p>}
+          <p className="form__error">{error}</p>
           <div className="form__div">
             <input
               type="email"

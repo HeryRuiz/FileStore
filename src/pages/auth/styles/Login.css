@@ -1,4 +1,4 @@
-#login {
+#login, #signup, #password {
   height: 75vh;
   display: flex;
   align-items: center;
@@ -25,7 +25,7 @@
     ),
     #f7fafc;
 }
-.login__container {
+.login__container, .signup__container, .password__container {
   width: 100%;
   max-width: 30rem;
   padding: 0rem 1rem;

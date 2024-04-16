@@ -5,7 +5,8 @@ import {
   Route,
   useLocation,
 } from "react-router-dom";
-
+import { auth, getUserByUID } from "./pages/firebase/firebase.js";
+import { onAuthStateChanged } from "firebase/auth";
 import Layout from "./pages/layout/Layout";
 import Hero from "./pages/hero/Hero";
 import Login from "./pages/auth/Login";
@@ -23,6 +24,27 @@ const ScrollToTop = () => {
 };
 
 function App() {
+  const [currentUser, setCurrentUser] = useState({});
+  const [signedin, setSignedIn] = useState(false);
+  const [load, setLoad] = useState(null);
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      setCurrentUser(user);
+      if (user) {
+        setSignedIn(true);
+        setLoad(true);
+        setTimeout(() => {
+          getUserByUID(user.uid).catch((error) => {
+            setError(error.message);
+          });
+        }, 500);
+      } else {
+        setLoad(false);
+        setSignedIn(false);
+      }
+    });
+  }, []);
   return (
     <>
       <>

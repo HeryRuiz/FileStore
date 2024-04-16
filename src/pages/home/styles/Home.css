@@ -149,7 +149,7 @@
   cursor: pointer;
 }
 .file__dropdown {
-  display: flex;
+  display: none;
   gap: 0.5rem;
   align-items: center;
   justify-content: center;

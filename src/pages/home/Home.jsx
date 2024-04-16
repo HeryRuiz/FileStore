@@ -27,7 +27,10 @@ function Home() {
     document.querySelector(".upload__modal").style.display = "block";
     document.querySelector(".upload__dark").style.display = "block";
   };
-
+  const [option, setOption] = useState(false)
+  if(option === true){
+    document.querySelector(".file__dropdown").style.display = "flex";
+  }
   return (
     <>
       <section id="home">
@@ -90,9 +93,8 @@ function Home() {
             </div>
             <div className="home__grid">
               {Array.from({ length: 8 }, (_, index) => {
-                const file = files[index]; // Get the file at the current index
+                const file = files[index];
                 if (file) {
-                  // Render the file if it exists
                   return (
                     <div key={index} className="grid__item">
                       <div className="item__top">
@@ -114,7 +116,6 @@ function Home() {
                     </div>
                   );
                 } else {
-                  // Render the Fake component for an empty slot
                   return <Fake key={index} />;
                 }
               })}

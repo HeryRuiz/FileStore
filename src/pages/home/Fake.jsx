@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  FileWarning,
-  EllipsisVertical,
-  Trash,
-} from "lucide-react";
-import filler from "./images/filler.png";
+import { FileWarning, EllipsisVertical, Trash, CircleX  } from "lucide-react";
 import avatar from "./images/avatar.png";
 function Fake() {
   return (
@@ -17,11 +12,13 @@ function Fake() {
           </div>
           <EllipsisVertical className="file__option" />
           <div className="file__dropdown">
-          <Trash />
-          <p>Delete</p>
+            <Trash />
+            <p>Delete</p>
           </div>
         </div>
-        <img className="item__image" src={filler} alt="image" />
+        <div className="item__image">
+        <CircleX className="file__icon" size={60} />
+        </div>
         <div className="item__position__flex">
           <img src={avatar} alt="avatar" />
           <p>You</p>

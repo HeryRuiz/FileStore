@@ -114,6 +114,10 @@
   }
   @media (max-width: 550px) {
     grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
 .grid__item {
@@ -167,11 +171,15 @@
 }
 .item__image {
   height: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: white;
   width: 99%;
   border-radius: 0.4rem;
   border: none;
 }
+
 .item__position__flex {
   width: 100%;
   display: flex;
@@ -258,6 +266,6 @@
 .upload__button {
   padding: 1rem 1.5rem;
 }
-.upload__close {
+.upload__close, .file__download {
   cursor: pointer;
 }

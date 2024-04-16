@@ -1,5 +1,14 @@
 import React, { useState } from "react";
-import { File, Trash, Grid3X3, Rows2, EllipsisVertical, X } from "lucide-react";
+import {
+  File,
+  Trash,
+  Grid3X3,
+  Rows2,
+  EllipsisVertical,
+  X,
+  Download,
+  FileText
+} from "lucide-react";
 import "./styles/Home.css";
 import Fake from "./Fake";
 import avatar from "./images/avatar.png";
@@ -9,8 +18,11 @@ function Home() {
   const [files, setFiles] = useState([
     {
       title: "hi",
-      imageLink:
-        "https://cdn.discordapp.com/attachments/1201847746638651424/1229136974980579481/logo.png?ex=662e9603&is=661c2103&hm=f09afe008189c54ff435c6337c95d77c00f9aa2b33b327c93003ad2556bf3c4a&",
+      downloadLink: "",
+    },
+    {
+      title: "hi",
+      downloadLink: "",
     },
   ]);
 
@@ -23,12 +35,17 @@ function Home() {
     document.querySelector(".upload__modal").style.display = "block";
     document.querySelector(".upload__dark").style.display = "block";
   };
-  const [option, setOption] = useState(false);
-  if(option === true){
-    document.querySelector(".file__dropdown").style.display = "flex";
-  }else{
-    document.querySelector(".file__dropdown").style.display = "none";
-  }
+
+  const [dropdownVisible, setDropdownVisible] = useState(
+    Array(files.length).fill(false)
+  );
+
+  const toggleDropdown = (index) => {
+    const newDropdownVisible = [...dropdownVisible];
+    newDropdownVisible[index] = !newDropdownVisible[index];
+    setDropdownVisible(newDropdownVisible);
+  };
+
   return (
     <>
       <section id="home">
@@ -97,23 +114,28 @@ function Home() {
                     <div key={index} className="grid__item">
                       <div className="item__top">
                         <div className="item__name">
-                          <File />
+                          <Download className="file__download" />
                           <p>{file.title}</p>
                         </div>
                         <EllipsisVertical
                           className="file__option"
-                          onClick={() => setOption(!option)}
+                          onClick={() => toggleDropdown(index)}
                         />
-                        <div className="file__dropdown">
+                        <div
+                          className="file__dropdown"
+                          style={{
+                            display: dropdownVisible[index] ? "flex" : "none",
+                          }}
+                        >
                           <Trash />
                           <p>Delete</p>
                         </div>
                       </div>
-                      <img
+                      <div
                         className="item__image"
-                        src={file.imageLink}
-                        alt="image"
-                      />
+                      >
+                        <FileText className="file__icon" size={60}/>
+                      </div>
                       <div className="item__position__flex">
                         <img src={avatar} alt="avatar" />
                         <p>You</p>

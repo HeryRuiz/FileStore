@@ -1,6 +1,5 @@
 <div align='center'><img style="width:10%" src='logo.png'/></div>
-
-<h2>About the project</h2>
+<h2></h2>
 
 <p>
 

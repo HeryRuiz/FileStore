@@ -23,6 +23,9 @@ nav {
 .nav__title{
     font-size: 1.3rem;
     font-weight: 400;
+    @media (max-width: 400px) {
+      display: none;
+    }
 }
 .nav__signin{
     background-color: #7552F6;
@@ -40,4 +43,17 @@ nav {
 .nav__avatar{
   width: 60px;
   cursor: pointer;
+}
+.signout__div{
+  display: flex;
+  align-items: center;
+}
+.signout{
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  position: relative;
+  border: 1px solid #ced1d4;
+  padding: 0.7rem;
+  border-radius: 0.3rem;
 }

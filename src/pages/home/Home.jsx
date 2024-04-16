@@ -16,14 +16,6 @@ import avatar from "./images/avatar.png";
 function Home() {
   const [selected, setSelected] = useState("all");
   const [files, setFiles] = useState([
-    {
-      title: "hi",
-      downloadLink: "",
-    },
-    {
-      title: "hi",
-      downloadLink: "",
-    },
   ]);
 
   const closeUpdate = () => {

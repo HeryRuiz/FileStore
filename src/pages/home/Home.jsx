@@ -43,7 +43,6 @@ function Home() {
       await set(ref(database, `files/${newFileKey}`), fileData);
       const storageRefPath = storageRef(storage, `files/${newFileKey}`);
       await uploadBytes(storageRefPath, uploadFile);
-      console.log("Form submitted successfully!");
       localStorage.setItem("hasSubmittedBefore", "true");
     } catch (error) {
       console.error("Error uploading data:", error);

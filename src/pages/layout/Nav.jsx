@@ -1,9 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
 import logo from "./images/logo.png";
 import "./styles/Nav.css";
 import { Link } from "react-router-dom";
 import { LogOut } from "lucide-react";
+import { auth } from "../firebase/firebase";
 function Nav({ signedin }) {
+
+  const handleSignOut = () => {
+    auth
+      .signOut()
+      .then(() => {
+        navigate("/login");
+        return;
+      })
+      .catch((error) => {
+        return;
+      });
+  };
+
   return (
     <header>
       <nav>
@@ -14,10 +28,10 @@ function Nav({ signedin }) {
           </Link>
           {signedin ? (
             <div className="signout__div">
-            <div className="signout"> 
-            <LogOut />
-            Sign Out
-            </div>
+              <button className="signout" onClick={handleSignOut}>
+                <LogOut />
+                Sign Out
+              </button>
             </div>
           ) : (
             <Link to="/login" className="nav__right">

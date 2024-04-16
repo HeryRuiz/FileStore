@@ -51,7 +51,7 @@ function App() {
         <Router>
           <ScrollToTop />
           <Routes>
-            <Route element={<Layout />}>
+            <Route element={<Layout signedin={signedin} />}>
               <Route path="/" element={<Hero />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />

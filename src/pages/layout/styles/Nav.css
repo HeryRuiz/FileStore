@@ -37,3 +37,6 @@ nav {
 .nav__signin:hover{
   filter: brightness(95%);
 }
+.nav__avatar{
+  width: 60px;
+}

@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import logo from "./images/logo.png";
 import "./styles/Nav.css";
 import { Link } from "react-router-dom";
-function Nav() {
+import avatar from '../home/images/avatar.png'
+function Nav({ signedin }) {
   return (
     <header>
       <nav>
@@ -11,9 +12,13 @@ function Nav() {
             <img src={logo} alt="FileStore Logo" />
             <p className="nav__title">Filestore</p>
           </Link>
-          <Link to="/login" className="nav__right">
-            <button className="nav__signin">Sign In</button>
-          </Link>
+          {signedin ? (
+            <img src={avatar} alt="avatar" className="nav__avatar"/>
+          ) : (
+            <Link to="/login" className="nav__right">
+              <button className="nav__signin">Sign In</button>
+            </Link>
+          )}
         </div>
       </nav>
     </header>

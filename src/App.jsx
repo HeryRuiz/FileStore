@@ -60,7 +60,7 @@ function App() {
               {load ? (
                 <Route path="/home" element={<Home />} />
               ) : (
-                <Route path="/dashboard" element={<Login />} />
+                <Route path="/home" element={<Login />} />
               )}
             </Route>
           </Routes>

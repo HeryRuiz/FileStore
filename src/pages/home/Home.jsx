@@ -1,21 +1,17 @@
 import React, { useState } from "react";
-import {
-  File,
-  Trash,
-  Grid3X3,
-  Rows2,
-  EllipsisVertical,
-  X,
-} from "lucide-react";
+import { File, Trash, Grid3X3, Rows2, EllipsisVertical, X } from "lucide-react";
 import "./styles/Home.css";
 import Fake from "./Fake";
 import avatar from "./images/avatar.png";
-import filler from "./images/filler.png";
 
 function Home() {
   const [selected, setSelected] = useState("all");
   const [files, setFiles] = useState([
-
+    {
+      title: "hi",
+      imageLink:
+        "https://cdn.discordapp.com/attachments/1201847746638651424/1229136974980579481/logo.png?ex=662e9603&is=661c2103&hm=f09afe008189c54ff435c6337c95d77c00f9aa2b33b327c93003ad2556bf3c4a&",
+    },
   ]);
 
   const closeUpdate = () => {
@@ -27,9 +23,11 @@ function Home() {
     document.querySelector(".upload__modal").style.display = "block";
     document.querySelector(".upload__dark").style.display = "block";
   };
-  const [option, setOption] = useState(false)
+  const [option, setOption] = useState(false);
   if(option === true){
     document.querySelector(".file__dropdown").style.display = "flex";
+  }else{
+    document.querySelector(".file__dropdown").style.display = "none";
   }
   return (
     <>
@@ -102,13 +100,20 @@ function Home() {
                           <File />
                           <p>{file.title}</p>
                         </div>
-                        <EllipsisVertical className="file__option" />
+                        <EllipsisVertical
+                          className="file__option"
+                          onClick={() => setOption(!option)}
+                        />
                         <div className="file__dropdown">
                           <Trash />
                           <p>Delete</p>
                         </div>
                       </div>
-                      <img className="item__image" src={file.imageLink} alt="image" />
+                      <img
+                        className="item__image"
+                        src={file.imageLink}
+                        alt="image"
+                      />
                       <div className="item__position__flex">
                         <img src={avatar} alt="avatar" />
                         <p>You</p>

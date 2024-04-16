@@ -3,6 +3,7 @@ import logo from "./images/logo.png";
 import "./styles/Nav.css";
 import { Link } from "react-router-dom";
 import avatar from '../home/images/avatar.png'
+import {auth} from "../firebase/firebase";
 function Nav({ signedin }) {
   return (
     <header>

@@ -69,25 +69,6 @@ function Home() {
                 All Files
               </p>
             </div>
-            <div
-              className="home__category"
-              onClick={() => setSelected("trash")}
-            >
-              <Trash
-                className={
-                  "category__name" +
-                  (selected === "trash" ? " home__selected" : "")
-                }
-              />
-              <p
-                className={
-                  "category__name" +
-                  (selected === "trash" ? " home__selected" : "")
-                }
-              >
-                Trash
-              </p>
-            </div>
           </div>
           <div className="home__right">
             <div className="home__top">

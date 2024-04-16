@@ -39,4 +39,5 @@ nav {
 }
 .nav__avatar{
   width: 60px;
+  cursor: pointer;
 }

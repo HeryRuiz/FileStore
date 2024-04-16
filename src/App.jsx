@@ -57,7 +57,11 @@ function App() {
               <Route path="/signup" element={<Signup />} />
               <Route path="/reset" element={<Password />} />
               {"private route"}
-              <Route path="/home" element={<Home />} />
+              {load ? (
+                <Route path="/home" element={<Home />} />
+              ) : (
+                <Route path="/dashboard" element={<Login />} />
+              )}
             </Route>
           </Routes>
         </Router>

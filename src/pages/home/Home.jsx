@@ -4,19 +4,19 @@ import {
   Trash,
   Grid3X3,
   Rows2,
-  FileCheck,
   EllipsisVertical,
   X,
 } from "lucide-react";
 import "./styles/Home.css";
-import filler from "./images/filler.png";
-import empty from "./images/empty.png";
 import Fake from "./Fake";
+import avatar from "./images/avatar.png";
+import filler from "./images/filler.png";
 
 function Home() {
   const [selected, setSelected] = useState("all");
-  const [isEmpty, setIsEmpty] = useState(false);
-  const [files, setFiles] = useState(Array(8).fill(null)); 
+  const [files, setFiles] = useState([
+
+  ]);
 
   const closeUpdate = () => {
     document.querySelector(".upload__modal").style.display = "none";
@@ -89,22 +89,36 @@ function Home() {
               </div>
             </div>
             <div className="home__grid">
-              {files.map((item, index) =>
-                index === 0 && item !== null ? (
-                  <img key={index} src={item} alt="File" />
-                ) : (
-                  <Fake key={index} />
-                )
-              )}
+              {Array.from({ length: 8 }, (_, index) => {
+                const file = files[index]; // Get the file at the current index
+                if (file) {
+                  // Render the file if it exists
+                  return (
+                    <div key={index} className="grid__item">
+                      <div className="item__top">
+                        <div className="item__name">
+                          <File />
+                          <p>{file.title}</p>
+                        </div>
+                        <EllipsisVertical className="file__option" />
+                        <div className="file__dropdown">
+                          <Trash />
+                          <p>Delete</p>
+                        </div>
+                      </div>
+                      <img className="item__image" src={file.imageLink} alt="image" />
+                      <div className="item__position__flex">
+                        <img src={avatar} alt="avatar" />
+                        <p>You</p>
+                      </div>
+                    </div>
+                  );
+                } else {
+                  // Render the Fake component for an empty slot
+                  return <Fake key={index} />;
+                }
+              })}
             </div>
-            {isEmpty ? (
-              <>
-                <img src={empty} alt="No Files" className="home__empty" />
-                <p></p>
-              </>
-            ) : (
-              <></>
-            )}
           </div>
         </div>
       </section>

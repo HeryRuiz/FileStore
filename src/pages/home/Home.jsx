@@ -12,18 +12,22 @@ import "./styles/Home.css";
 import filler from "./images/filler.png";
 import empty from "./images/empty.png";
 import Fake from "./Fake";
+
 function Home() {
   const [selected, setSelected] = useState("all");
-  const [isempty, setEmpty] = useState(false);
+  const [isEmpty, setIsEmpty] = useState(false);
+  const [files, setFiles] = useState(Array(8).fill(null)); 
+
   const closeUpdate = () => {
-    document.querySelector('.upload__modal').style.display = "none"
-    document.querySelector('.upload__dark').style.display = "none"
-  }
+    document.querySelector(".upload__modal").style.display = "none";
+    document.querySelector(".upload__dark").style.display = "none";
+  };
+
   const openUpdate = () => {
-    document.querySelector('.upload__modal').style.display = "block"
-    document.querySelector('.upload__dark').style.display = "block"
-  }
-  
+    document.querySelector(".upload__modal").style.display = "block";
+    document.querySelector(".upload__dark").style.display = "block";
+  };
+
   return (
     <>
       <section id="home">
@@ -70,7 +74,9 @@ function Home() {
               <p className="home__title">
                 {selected === "all" ? "All Files" : "Trash"}
               </p>
-              <button className="home__upload" onClick={openUpdate}>Upload File</button>
+              <button className="home__upload" onClick={openUpdate}>
+                Upload File
+              </button>
             </div>
             <div className="home__layout">
               <div className="layout__option">
@@ -83,16 +89,15 @@ function Home() {
               </div>
             </div>
             <div className="home__grid">
-              <Fake />
-              <Fake />
-              <Fake />
-              <Fake />
-              <Fake />
-              <Fake />
-              <Fake />
-              <Fake />
+              {files.map((item, index) =>
+                index === 0 && item !== null ? (
+                  <img key={index} src={item} alt="File" />
+                ) : (
+                  <Fake key={index} />
+                )
+              )}
             </div>
-            {isempty ? (
+            {isEmpty ? (
               <>
                 <img src={empty} alt="No Files" className="home__empty" />
                 <p></p>
@@ -106,7 +111,7 @@ function Home() {
       <div className="upload__modal">
         <div className="upload__top">
           <p>Upload your file here</p>
-          <X onClick={closeUpdate} className="upload__close"/>
+          <X onClick={closeUpdate} className="upload__close" />
         </div>
         <form action="">
           <div className="upload__div">

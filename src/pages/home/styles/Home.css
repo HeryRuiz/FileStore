@@ -148,7 +148,7 @@
 .file__option {
   cursor: pointer;
 }
-.file__dropdown{
+.file__dropdown {
   display: flex;
   gap: 0.5rem;
   align-items: center;
@@ -186,15 +186,17 @@
   width: 100%;
   max-width: 35rem;
 }
-.upload__dark{
-width: 100vw;
-height: 100vh;
-position: fixed;
-top: 0;
-background-color: #000000;
-opacity: 0.7;
+.upload__dark {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  background-color: #000000;
+  opacity: 0.7;
+  display: none;
 }
-.upload__modal{
+.upload__modal {
+  display: none;
   height: 100%;
   width: 100%;
   max-width: 50rem;
@@ -219,15 +221,14 @@ opacity: 0.7;
     width: 90%;
     margin: 1rem 1rem 1rem 0rem;
   }
-  
 }
-.upload__top{
+.upload__top {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 3rem;
 }
-.upload__top p{
+.upload__top p {
   margin-top: 2rem;
   font-size: 1.7rem;
   font-weight: 600;
@@ -238,25 +239,25 @@ opacity: 0.7;
     font-size: 1rem;
   }
 }
-.upload__input{
+.upload__input {
   width: 95%;
   @media (max-width: 900px) {
     width: 90%;
   }
 }
-.upload__div{
+.upload__div {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   margin-bottom: 2rem;
 }
-.upload__div label{
+.upload__div label {
   font-weight: 500;
   font-size: 1.1rem;
 }
-.upload__button{
+.upload__button {
   padding: 1rem 1.5rem;
 }
-.upload__close{
+.upload__close {
   cursor: pointer;
 }

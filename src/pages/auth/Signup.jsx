@@ -44,7 +44,6 @@ function Signup() {
         firstName: firstName,
         lastName: lastName,
         email: email,
-        files: [],
       });
 
       setEmail("");

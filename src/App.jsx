@@ -45,6 +45,13 @@ function App() {
       }
     });
   }, []);
+
+function popup(pop) {
+    document.querySelector(`.${pop}`).style.top = "1rem";
+    setTimeout(() => {
+        document.querySelector(`.${pop}`).style.top = "-100px";
+    }, 2000);
+}
   return (
     <>
       <>
@@ -58,7 +65,7 @@ function App() {
               <Route path="/reset" element={<Password />} />
               {"private route"}
               {load ? (
-                <Route path="/home" element={<Home />} />
+                <Route path="/home" element={<Home popup{popup}/>} />
               ) : (
                 <Route path="/home" element={<Login />} />
               )}

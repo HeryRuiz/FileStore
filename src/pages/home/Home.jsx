@@ -145,6 +145,11 @@ function Home() {
       <CircleAlert />
         <p>File Rejected</p>
       </div>
+
+<div className="popup__fail2">
+      <CircleAlert />
+        <p>File Deleted</p>
+      </div>
     </>
   );
 }

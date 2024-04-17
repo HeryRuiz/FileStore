@@ -8,7 +8,7 @@ import {
 } from "firebase/storage";
 import { database, auth, storage } from "../firebase/firebase";
 import Fake from "./Fake";
-function Items() {
+function Items({popup}) {
   const [files, setFiles] = useState([]);
   const [imageUrls, setImageUrls] = useState({});
   const [dropdownVisible, setDropdownVisible] = useState({});

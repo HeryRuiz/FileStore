@@ -311,7 +311,7 @@
     font-size: 1rem;
   }
 }
-.popup__fail{
+.popup__fail, .popup__fail2{
   background-color: #D4C9C6;
   border: 1px solid #d6b4ab;
   height: 100%;
@@ -335,7 +335,7 @@
     max-height: 3rem;
   }
 }
-.popup__fail p{
+.popup__fail p, .popup__fail2 p{
   font-size: 1.1rem;
   font-weight: 500;
   @media (max-width: 500px) {

@@ -7,7 +7,7 @@ import {
   deleteObject,
 } from "firebase/storage";
 import { database, auth, storage } from "../firebase/firebase";
-import Fake from './Fake'
+import Fake from "./Fake";
 function Items() {
   const [files, setFiles] = useState([]);
   const [imageUrls, setImageUrls] = useState({});
@@ -20,10 +20,12 @@ function Items() {
         const snapshot = await get(filesRef);
         const filesData = snapshot.val();
         if (filesData) {
-          const filesArray = Object.entries(filesData).map(([id, data]) => ({
-            id,
-            title: data.title,
-          }));
+          const filesArray = Object.entries(filesData)
+            .map(([id, data]) => ({
+              id,
+              title: data.title,
+            }))
+            .filter((file) => file.user === auth.currentUser.uid);
           setFiles(filesArray);
         } else {
           setFiles([]);
@@ -90,7 +92,7 @@ function Items() {
     const renderedItems = [];
     const totalItems = files.length;
     const remainingSlots = 8 - totalItems;
-  
+
     for (let i = 0; i < totalItems; i++) {
       const file = files[i];
       renderedItems.push(
@@ -132,26 +134,22 @@ function Items() {
             )}
           </div>
           <div className="item__position__flex">
-            <div className="item__avatar">{auth? auth.currentUser.email[0].toLocaleUpperCase() : 'Y'}</div>
+            <div className="item__avatar">
+              {auth ? auth.currentUser.email[0].toLocaleUpperCase() : "Y"}
+            </div>
             <p>You</p>
           </div>
         </div>
       );
     }
-  
+
     for (let i = 0; i < remainingSlots; i++) {
-      renderedItems.push(
-          <Fake key={`fake-${i}`} />
-      );
+      renderedItems.push(<Fake key={`fake-${i}`} />);
     }
-  
+
     return renderedItems;
   };
 
-  return (
-    <div className="home__grid">
-      {renderItems()}
-    </div>
-  );
+  return <div className="home__grid">{renderItems()}</div>;
 }
 export default Items;

@@ -21,7 +21,9 @@ function Fake() {
           <FileWarning className="file__icon" size={60} />
         </div>
         <div className="item__position__flex">
-        <div className="item__avatar">{auth? auth.currentUser.email[0].toLocaleUpperCase() : 'Y'}</div>
+          <div className="item__avatar">
+            {auth ? auth.currentUser.email[0].toLocaleUpperCase() : "Y"}
+          </div>
           <p>You</p>
         </div>
       </div>

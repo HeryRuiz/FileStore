@@ -37,6 +37,8 @@ function Home() {
         const storageRefPath = storageRef(storage, `files/${newFileKey}`);
         await uploadBytes(storageRefPath, uploadFile);
         localStorage.setItem("hasSubmittedBefore", "true");
+        document.querySelector('.form__input').value = 'w'
+        event.target.reset();
         closeUpdate();
       } else {
         console.error("Error: Please upload an image file.");
@@ -103,7 +105,7 @@ function Home() {
               type="text"
               placeholder="Title"
               maxLength={8}
-              className="form__input upload__input "
+              className="form__input upload__input2 "
               value={uploadTitle}
               onChange={(e) => setUploadTitle(e.target.value)}
               required

@@ -266,10 +266,11 @@
 .upload__button {
   padding: 1rem 1.5rem;
 }
-.upload__close, .file__download {
+.upload__close,
+.file__download {
   cursor: pointer;
 }
-.item__avatar{
+.item__avatar {
   display: flex;
   justify-content: center;
   align-items: center;

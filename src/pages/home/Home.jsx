@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { File, Grid3X3, Rows2, X } from "lucide-react";
+import { File, Grid3X3, Rows2, X, CircleCheckBig } from "lucide-react";
 import "./styles/Home.css";
 
 import { database, auth, storage } from "../firebase/firebase";
@@ -24,6 +24,14 @@ function Home() {
   const isImage = (file) => {
     return file.type.startsWith("image/");
   };
+  function popup(pop) {
+    document.querySelector(`.${pop}`).style.top = "1rem";
+    setTimeout(() => {
+        document.querySelector(`.${pop}`).style.top = "-100px";
+    }, 2000);
+}
+
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -37,10 +45,12 @@ function Home() {
         const storageRefPath = storageRef(storage, `files/${newFileKey}`);
         await uploadBytes(storageRefPath, uploadFile);
         localStorage.setItem("hasSubmittedBefore", "true");
-        document.querySelector('.form__input').value = 'w'
+        document.querySelector(".form__input").value = "w";
+        popup('popup__success')
         event.target.reset();
         closeUpdate();
       } else {
+        popup('popup__fail')
         console.error("Error: Please upload an image file.");
       }
     } catch (error) {
@@ -127,6 +137,10 @@ function Home() {
         </form>
       </div>
       <div className="upload__dark"></div>
+      <div className="popup__success">
+        <CircleCheckBig />
+        <p>File Added</p>
+      </div>
     </>
   );
 }

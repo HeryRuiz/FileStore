@@ -280,3 +280,27 @@
   color: white;
   border-radius: 100%;
 }
+.popup__success{
+  background-color: #EAFBF2;
+  border: 1px solid #d9e4df;
+  height: 100%;
+  width: 100%;
+  max-height: 5rem;
+  max-width: 20rem;
+  border-radius: 0.5rem;
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: -100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #195332;
+  gap: 0.4rem;
+  transition: all 0.2s ease-in-out;
+}
+.popup__success p{
+  font-size: 1.1rem;
+  font-weight: 500;
+}

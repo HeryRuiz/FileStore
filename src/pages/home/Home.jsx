@@ -7,7 +7,7 @@ import { ref, set, push } from "firebase/database";
 import { ref as storageRef, uploadBytes } from "firebase/storage";
 import Items from "./Items";
 
-function Home() {
+function Home({popup}) {
   const [selected, setSelected] = useState("all");
   const [uploadTitle, setUploadTitle] = useState("");
   const [uploadFile, setUploadFile] = useState(null);
@@ -24,13 +24,6 @@ function Home() {
   const isImage = (file) => {
     return file.type.startsWith("image/");
   };
-  function popup(pop) {
-    document.querySelector(`.${pop}`).style.top = "1rem";
-    setTimeout(() => {
-        document.querySelector(`.${pop}`).style.top = "-100px";
-    }, 2000);
-}
-
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -99,7 +92,7 @@ function Home() {
                 <p>Table</p>
               </div>
             </div>
-            <Items />
+            <Items popup={popup}/>
           </div>
         </div>
       </section>

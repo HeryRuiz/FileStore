@@ -312,7 +312,7 @@
   }
 }
 .popup__fail, .popup__fail2{
-  background-color: #D4C9C6;
+  background-color: #f1eded;
   border: 1px solid #d6b4ab;
   height: 100%;
   width: 100%;

@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { File, Grid3X3, Rows2, X, CircleCheckBig } from "lucide-react";
+import React, { useState } from "react";
+import { File, Grid3X3, Rows2, X, CircleCheckBig, CircleAlert } from "lucide-react";
 import "./styles/Home.css";
 
 import { database, auth, storage } from "../firebase/firebase";
@@ -140,6 +140,10 @@ function Home() {
       <div className="popup__success">
         <CircleCheckBig />
         <p>File Added</p>
+      </div>
+      <div className="popup__fail">
+      <CircleAlert />
+        <p>File Rejected</p>
       </div>
     </>
   );

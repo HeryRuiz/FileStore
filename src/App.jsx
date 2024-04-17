@@ -65,7 +65,7 @@ function popup(pop) {
               <Route path="/reset" element={<Password />} />
               {"private route"}
               {load ? (
-                <Route path="/home" element={<Home popup{popup}/>} />
+                <Route path="/home" element={<Home popup={popup}/>} />
               ) : (
                 <Route path="/home" element={<Login />} />
               )}

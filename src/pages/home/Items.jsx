@@ -15,28 +15,36 @@ function Items() {
 
   useEffect(() => {
     const fetchFiles = async () => {
-      const filesRef = ref(database, "files");
-      try {
-        const snapshot = await get(filesRef);
-        const filesData = snapshot.val();
-        if (filesData) {
-          const filesArray = Object.entries(filesData)
-            .map(([id, data]) => ({
-              id,
-              title: data.title,
-            }))
-            .filter((file) => file.user === auth.currentUser.uid);
-          setFiles(filesArray);
-        } else {
-          setFiles([]);
+        const filesRef = ref(database, "files");
+        try {
+            const snapshot = await get(filesRef);
+            const filesData = snapshot.val();
+            if (filesData) {
+                const filesArray = Object.entries(filesData)
+                    .map(([id, data]) => ({
+                        id,
+                        title: data.title,
+                        user: data.user
+                    }))
+                    .filter((file) => file.user === auth.currentUser.uid);
+                const urls = {};
+                for (const file of filesArray) {
+                    const url = await fetchImageURL(file.id);
+                    urls[file.id] = url;
+                }
+                setImageUrls(urls);
+                
+                setFiles(filesArray);
+            } else {
+                setFiles([]);
+            }
+        } catch (error) {
+            console.error("Error fetching files:", error);
         }
-      } catch (error) {
-        console.error("Error fetching files:", error);
-      }
     };
 
     fetchFiles();
-  }, []);
+}, []);
 
   useEffect(() => {
     const fetchImageURLs = async () => {

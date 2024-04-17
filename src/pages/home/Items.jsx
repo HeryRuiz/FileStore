@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Download, EllipsisVertical, FileText, Trash } from "lucide-react";
-import { get, ref } from "firebase/database";
-import { getDownloadURL, ref as storageRef } from "firebase/storage";
+import { get, ref, remove } from "firebase/database";
+import { getDownloadURL, ref as storageRef, deleteObject } from "firebase/storage";
 import { database, auth, storage } from "../firebase/firebase";
+
 function Items() {
   const [files, setFiles] = useState([]);
   const [imageUrls, setImageUrls] = useState({});
@@ -61,6 +62,20 @@ function Items() {
       [fileId]: !prevState[fileId],
     }));
   };
+
+  const handleDeleteFile = async (fileId) => {
+    const fileRef = ref(database, `files/${fileId}`);
+    try {
+      await remove(fileRef);
+      const storageRefPath = storageRef(storage, `files/${fileId}`);
+      await deleteObject(storageRefPath);
+      const updatedFiles = files.filter((file) => file.id !== fileId);
+      setFiles(updatedFiles);
+    } catch (error) {
+      console.error("Error deleting file:", error);
+    }
+  };
+
   return (
     <div className="home__grid">
       {files.map((file) => (
@@ -79,8 +94,9 @@ function Items() {
               style={{
                 display: dropdownVisible[file.id] ? "flex" : "none",
               }}
+              onClick={() => handleDeleteFile(file.id)}
             >
-              <Trash />
+              <Trash  />
               <p>Delete</p>
             </div>
           </div>

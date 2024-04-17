@@ -7,7 +7,7 @@ import {
   deleteObject,
 } from "firebase/storage";
 import { database, auth, storage } from "../firebase/firebase";
-
+import Fake from './Fake'
 function Items() {
   const [files, setFiles] = useState([]);
   const [imageUrls, setImageUrls] = useState({});
@@ -86,9 +86,14 @@ function Items() {
     }
   };
 
-  return (
-    <div className="home__grid">
-      {files.map((file) => (
+  const renderItems = () => {
+    const renderedItems = [];
+    const totalItems = files.length;
+    const remainingSlots = 8 - totalItems;
+  
+    for (let i = 0; i < totalItems; i++) {
+      const file = files[i];
+      renderedItems.push(
         <div key={file.id} className="grid__item">
           <div className="item__top">
             <div className="item__name">
@@ -127,13 +132,26 @@ function Items() {
             )}
           </div>
           <div className="item__position__flex">
-            <div className="item__avatar">H</div>
+            <div className="item__avatar">{auth? auth.currentUser.email[0].toLocaleUpperCase() : 'Y'}</div>
             <p>You</p>
           </div>
         </div>
-      ))}
+      );
+    }
+  
+    for (let i = 0; i < remainingSlots; i++) {
+      renderedItems.push(
+          <Fake key={`fake-${i}`} />
+      );
+    }
+  
+    return renderedItems;
+  };
+
+  return (
+    <div className="home__grid">
+      {renderItems()}
     </div>
   );
 }
-
 export default Items;

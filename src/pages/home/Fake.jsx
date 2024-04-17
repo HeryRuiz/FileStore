@@ -1,6 +1,6 @@
 import React from "react";
 import { FileWarning, EllipsisVertical, Trash, Info } from "lucide-react";
-import avatar from "./images/avatar.png";
+
 function Fake() {
   return (
     <>
@@ -20,7 +20,7 @@ function Fake() {
           <FileWarning className="file__icon" size={60} />
         </div>
         <div className="item__position__flex">
-          <img src={avatar} alt="avatar" />
+        <div className="item__avatar">{'Y'}</div>
           <p>You</p>
         </div>
       </div>

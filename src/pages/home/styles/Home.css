@@ -269,3 +269,13 @@
 .upload__close, .file__download {
   cursor: pointer;
 }
+.item__avatar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background-color: #000000;
+  color: white;
+  border-radius: 100%;
+}

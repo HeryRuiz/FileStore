@@ -1,24 +1,14 @@
-import React, { useState } from "react";
-import {
-  File,
-  Trash,
-  Grid3X3,
-  Rows2,
-  EllipsisVertical,
-  X,
-  Download,
-  FileText,
-} from "lucide-react";
+import React, { useEffect, useState } from "react";
+import { File, Grid3X3, Rows2, X } from "lucide-react";
 import "./styles/Home.css";
-import Fake from "./Fake";
-import avatar from "./images/avatar.png";
+
 import { database, auth, storage } from "../firebase/firebase";
 import { ref, set, push } from "firebase/database";
 import { ref as storageRef, uploadBytes } from "firebase/storage";
+import Items from "./Items";
 
 function Home() {
   const [selected, setSelected] = useState("all");
-  const [files, setFiles] = useState([]);
   const [uploadTitle, setUploadTitle] = useState("");
   const [uploadFile, setUploadFile] = useState(null);
 
@@ -89,45 +79,7 @@ function Home() {
                 <p>Table</p>
               </div>
             </div>
-            <div className="home__grid">
-              {Array.from({ length: 8 }, (_, index) => {
-                const file = files[index];
-                if (file) {
-                  return (
-                    <div key={index} className="grid__item">
-                      <div className="item__top">
-                        <div className="item__name">
-                          <Download className="file__download" />
-                          <p>{file.title}</p>
-                        </div>
-                        <EllipsisVertical
-                          className="file__option"
-                          onClick={() => toggleDropdown(index)}
-                        />
-                        <div
-                          className="file__dropdown"
-                          style={{
-                            display: dropdownVisible[index] ? "flex" : "none",
-                          }}
-                        >
-                          <Trash />
-                          <p>Delete</p>
-                        </div>
-                      </div>
-                      <div className="item__image">
-                        <FileText className="file__icon" size={60} />
-                      </div>
-                      <div className="item__position__flex">
-                        <img src={avatar} alt="avatar" />
-                        <p>You</p>
-                      </div>
-                    </div>
-                  );
-                } else {
-                  return <Fake key={index} />;
-                }
-              })}
-            </div>
+            <Items />
           </div>
         </div>
       </section>

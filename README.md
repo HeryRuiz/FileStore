@@ -27,7 +27,7 @@
 
 <h3 align='center'>Files 📁</h3>
 <div align='center'>
-  <img src='./readme/files.png'/>
+  <img src='./readme/file.png'/>
 </div>
 <br><br>
 <h3 align='center'>Log in 🙇</h3>

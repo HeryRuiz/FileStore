@@ -91,6 +91,7 @@ function Items({popup}) {
       await deleteObject(storageRefPath);
       const updatedFiles = files.filter((file) => file.id !== fileId);
       setFiles(updatedFiles);
+      popup('popup__fail2')
     } catch (error) {
       console.error("Error deleting file:", error);
     }

@@ -21,23 +21,31 @@ function Home() {
     document.querySelector(".upload__modal").style.display = "block";
     document.querySelector(".upload__dark").style.display = "block";
   };
-
+  const isImage = (file) => {
+    return file.type.startsWith("image/");
+  };
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const fileData = {
-        title: uploadTitle,
-        user: auth.currentUser.uid,
-      };
-      const newFileKey = push(ref(database, "files")).key;
-      await set(ref(database, `files/${newFileKey}`), fileData);
-      const storageRefPath = storageRef(storage, `files/${newFileKey}`);
-      await uploadBytes(storageRefPath, uploadFile);
-      localStorage.setItem("hasSubmittedBefore", "true");
+      if (uploadFile && isImage(uploadFile)) {
+        const fileData = {
+          title: uploadTitle,
+          user: auth.currentUser.uid,
+        };
+        const newFileKey = push(ref(database, "files")).key;
+        await set(ref(database, `files/${newFileKey}`), fileData);
+        const storageRefPath = storageRef(storage, `files/${newFileKey}`);
+        await uploadBytes(storageRefPath, uploadFile);
+        localStorage.setItem("hasSubmittedBefore", "true");
+        closeUpdate();
+      } else {
+        console.error("Error: Please upload an image file.");
+      }
     } catch (error) {
       console.error("Error uploading data:", error);
     }
   };
+
   return (
     <>
       <section id="home">

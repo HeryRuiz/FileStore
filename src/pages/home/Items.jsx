@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Download, EllipsisVertical, FileText, Trash } from "lucide-react";
 import { get, ref, remove } from "firebase/database";
-import { getDownloadURL, ref as storageRef, deleteObject } from "firebase/storage";
+import {
+  getDownloadURL,
+  ref as storageRef,
+  deleteObject,
+} from "firebase/storage";
 import { database, auth, storage } from "../firebase/firebase";
 
 function Items() {
@@ -63,6 +67,12 @@ function Items() {
     }));
   };
 
+  const handleDownloadFile = (fileId) => {
+    const downloadURL = imageUrls[fileId];
+    if (downloadURL) {
+      window.open(downloadURL, "_blank");
+    }
+  };
   const handleDeleteFile = async (fileId) => {
     const fileRef = ref(database, `files/${fileId}`);
     try {
@@ -82,7 +92,10 @@ function Items() {
         <div key={file.id} className="grid__item">
           <div className="item__top">
             <div className="item__name">
-              <Download className="file__download" />
+              <Download
+                className="file__download"
+                onClick={() => handleDownloadFile(file.id)}
+              />
               <p>{file.title}</p>
             </div>
             <EllipsisVertical
@@ -96,7 +109,7 @@ function Items() {
               }}
               onClick={() => handleDeleteFile(file.id)}
             >
-              <Trash  />
+              <Trash />
               <p>Delete</p>
             </div>
           </div>

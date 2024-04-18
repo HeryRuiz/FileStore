@@ -2,7 +2,7 @@
 <h2>About project</h2>
 
 <p>
-File Drive is a cutting-edge file management app focused on storage and organization of digital assets. Developed with Convex for stability and Clerk for authentication, it ensures security and accessibility. Powered by Next.js, TypeScript, and HTML, it offers dynamic interfaces for optimal user experience.
+File Drive is a cutting-edge file management app focused on storage and organization of digital assets. Developed with React and Firebase for authentication, it ensures security and accessibility.
 </p>
 
 👉 Live Demo: <a href='https://filestored.vercel.app'>Filestore Demo</a>

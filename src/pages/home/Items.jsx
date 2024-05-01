@@ -8,7 +8,7 @@ import {
 } from "firebase/storage";
 import { database, auth, storage } from "../firebase/firebase";
 import Fake from "./Fake";
-function Items({popup}) {
+function Items({ popup }) {
   const [files, setFiles] = useState([]);
   const [imageUrls, setImageUrls] = useState({});
   const [dropdownVisible, setDropdownVisible] = useState({});
@@ -91,7 +91,7 @@ function Items({popup}) {
       await deleteObject(storageRefPath);
       const updatedFiles = files.filter((file) => file.id !== fileId);
       setFiles(updatedFiles);
-      popup('popup__fail2')
+      popup("popup__fail2");
     } catch (error) {
       console.error("Error deleting file:", error);
     }

@@ -1,31 +1,31 @@
 .hero__content {
+  align-items: center;
+  background: radial-gradient(
+      55.87%55.87%at 35.49%-18.37%,
+      #ebcdf0 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    radial-gradient(
+      70.81%48.44%at -24.53%-16.02%,
+      #f0c2ed 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    radial-gradient(
+      91.61%92.58%at 104.86%-43.36%,
+      #bac4ec 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    radial-gradient(
+      50.59%55.55%at -2.99%-8.69%,
+      #bddcf7 9.06%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    #f7fafc;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   height: 70vh;
+  justify-content: center;
   padding: 2rem 0rem 2rem 0rem;
-  background: radial-gradient(
-    55.87%55.87%at 35.49%-18.37%,
-    #ebcdf0 0%,
-    rgba(255, 255, 255, 0) 100%
-  ),
-  radial-gradient(
-    70.81%48.44%at -24.53%-16.02%,
-    #f0c2ed 0%,
-    rgba(255, 255, 255, 0) 100%
-  ),
-  radial-gradient(
-    91.61%92.58%at 104.86%-43.36%,
-    #bac4ec 0%,
-    rgba(255, 255, 255, 0) 100%
-  ),
-  radial-gradient(
-    50.59%55.55%at -2.99%-8.69%,
-    #bddcf7 9.06%,
-    rgba(255, 255, 255, 0) 100%
-  ),
-  #f7fafc;
 }
 .hero__content img {
   width: 12.5rem;
@@ -38,8 +38,8 @@
   color: #111827;
   font-size: 3.5rem;
   font-weight: 800;
-  text-align: center;
   margin-bottom: 1rem;
+  text-align: center;
   @media (max-width: 700px) {
     font-size: 3rem;
   }
@@ -54,11 +54,11 @@
   }
 }
 .hero__description {
-  text-align: center;
   color: #67707b;
   font-weight: 500;
   margin-bottom: 2rem;
   padding: 0rem 1rem;
+  text-align: center;
   @media (max-width: 600px) {
     font-size: 0.9rem;
   }
@@ -68,32 +68,32 @@
   gap: 1rem;
 }
 .hero__started {
-  background-color: #7552F6;
-  color: white;
-  border: none;
-  font-weight: 500;
-  font-size: 0.9rem;
-  padding: 0.6rem;
+  background-color: #7552f6;
   border-radius: 0.3rem;
+  border: none;
+  color: white;
   cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.6rem;
   transition: all 0.1s ease-in-out;
 }
 .hero__started:hover {
   filter: brightness(95%);
 }
 .hero__learn {
-  border: none;
+  align-items: center;
   background-color: transparent;
+  border: none;
   color: #111827;
-  font-weight: 600;
-  font-size: 0.92rem;
   cursor: pointer;
   display: flex;
+  font-size: 0.92rem;
+  font-weight: 600;
   gap: 0.3rem;
-  align-items: center;
 }
 .hero__arrow {
-  position: relative;
   left: 0;
+  position: relative;
   transition: all 0.3s ease-in-out;
 }

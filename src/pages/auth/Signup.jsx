@@ -12,7 +12,7 @@ function Signup() {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
   const navigate = useNavigate();
- 
+
   const handleFirstNameChange = (e) => {
     setFirstName(e.target.value);
   };
@@ -55,7 +55,7 @@ function Signup() {
       navigate("/login");
     } catch (error) {
       setSuccess(false);
-      document.querySelector('.form__error').style.opacity = '1'
+      document.querySelector(".form__error").style.opacity = "1";
     }
   };
 

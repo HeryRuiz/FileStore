@@ -7,7 +7,9 @@ function Footer() {
     <>
       <footer className="footer">
         <div className="footer__container">
-          <Link to='/' className="footer__name">Filestore</Link>
+          <Link to="/" className="footer__name">
+            Filestore
+          </Link>
           <div className="footer__div">
             <p>Privacy</p>
             <p>Terms of Service</p>

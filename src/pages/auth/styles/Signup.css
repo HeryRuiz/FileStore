@@ -1,7 +1,7 @@
 #signup {
-  height: 75vh;
-  display: flex;
   align-items: center;
+  display: flex;
+  height: 75vh;
   justify-content: center;
   background: radial-gradient(
       55.87%55.87%at 35.49%-18.37%,
@@ -26,7 +26,7 @@
     #f7fafc;
 }
 .signup__container {
-  width: 100%;
   max-width: 30rem;
   padding: 0rem 1rem;
+  width: 100%;
 }

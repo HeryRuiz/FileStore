@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import {
-  sendPasswordResetEmail,
-} from "firebase/auth";
+import { sendPasswordResetEmail } from "firebase/auth";
 import { auth } from "../firebase/firebase";
+
 function Password() {
   const [email, setEmail] = useState("");
   const [successMessage, setSuccessMessage] = useState("");

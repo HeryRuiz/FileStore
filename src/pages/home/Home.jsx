@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { File, Grid3X3, Rows2, X, CircleCheckBig, CircleAlert } from "lucide-react";
+import {
+  File,
+  Grid3X3,
+  Rows2,
+  X,
+  CircleCheckBig,
+  CircleAlert,
+} from "lucide-react";
 import "./styles/Home.css";
 
 import { database, auth, storage } from "../firebase/firebase";
@@ -7,7 +14,7 @@ import { ref, set, push } from "firebase/database";
 import { ref as storageRef, uploadBytes } from "firebase/storage";
 import Items from "./Items";
 
-function Home({popup}) {
+function Home({ popup }) {
   const [selected, setSelected] = useState("all");
   const [uploadTitle, setUploadTitle] = useState("");
   const [uploadFile, setUploadFile] = useState(null);
@@ -39,11 +46,11 @@ function Home({popup}) {
         await uploadBytes(storageRefPath, uploadFile);
         localStorage.setItem("hasSubmittedBefore", "true");
         document.querySelector(".form__input").value = "w";
-        popup('popup__success')
+        popup("popup__success");
         event.target.reset();
         closeUpdate();
       } else {
-        popup('popup__fail')
+        popup("popup__fail");
         console.error("Error: Please upload an image file.");
       }
     } catch (error) {
@@ -92,7 +99,7 @@ function Home({popup}) {
                 <p>Table</p>
               </div>
             </div>
-            <Items popup={popup}/>
+            <Items popup={popup} />
           </div>
         </div>
       </section>
@@ -135,12 +142,12 @@ function Home({popup}) {
         <p>File Added</p>
       </div>
       <div className="popup__fail">
-      <CircleAlert />
+        <CircleAlert />
         <p>File Rejected</p>
       </div>
 
-<div className="popup__fail2">
-      <CircleAlert />
+      <div className="popup__fail2">
+        <CircleAlert />
         <p>File Deleted</p>
       </div>
     </>

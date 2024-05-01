@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import { LogOut } from "lucide-react";
 import { auth } from "../firebase/firebase";
 function Nav({ signedin }) {
-
   const handleSignOut = () => {
     auth
       .signOut()

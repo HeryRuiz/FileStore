@@ -1,13 +1,13 @@
 body {
+  background-color: #f9fafb;
   font-family: "Inter", sans-serif;
   margin: 0;
-  background-color: #f9fafb;
 }
 * {
+  font-family: "Inter", sans-serif;
   margin: 0;
   text-decoration: none;
-  font-family: "Inter", sans-serif;
 }
-a{
+a {
   color: black;
 }

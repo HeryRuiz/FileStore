@@ -1,11 +1,11 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import Nav from './Nav.jsx'
+import Nav from "./Nav.jsx";
 import Footer from "./Footer.jsx";
-function Layout({signedin}) {
+function Layout({ signedin }) {
   return (
     <>
-      <Nav signedin={signedin}/>
+      <Nav signedin={signedin} />
       <Outlet />
       <Footer />
     </>

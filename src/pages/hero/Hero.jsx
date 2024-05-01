@@ -26,11 +26,13 @@ function Home() {
             minute.
           </p>
           <div className="hero__div">
-            <Link to='/home' className="hero__started">Get Started</Link>
+            <Link to="/home" className="hero__started">
+              Get Started
+            </Link>
             <button
               className="hero__learn"
-              onMouseOver={()=> setArrowStyle()}
-              onMouseOut={()=> resetArrowStyle()}
+              onMouseOver={() => setArrowStyle()}
+              onMouseOut={() => resetArrowStyle()}
             >
               Learn more <span className="hero__arrow">→</span>
             </button>

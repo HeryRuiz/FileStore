@@ -1,8 +1,8 @@
 <div align='center'><img style="width:10%" src='logo.png'/></div>
-<h2></h2>
+<h2>About project</h2>
 
 <p>
-
+File Drive is a file management app focused on storage and organization of digital assets. Developed with React and Firebase for authentication, it ensures security and accessibility.
 </p>
 
 👉 Live Demo: <a href='https://filestored.vercel.app'>Filestore Demo</a>
